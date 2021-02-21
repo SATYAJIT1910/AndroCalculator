@@ -357,19 +357,19 @@ namespace AndroCalculator
         private void equal_Click(object sender, EventArgs e)
         {
 
-            if (mainstring.Length < 15)
+            if (mainstring.Length > 15|| mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
             {
 
-           
-        
-            string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
-            mainview.Text = Convert.ToString(value);
-            secondaryview.Text = Convert.ToString(value);
+                mainview.Text = "Invaild Input";
+
             }
             else
             {
+            string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+            mainview.Text = Convert.ToString(value);
+            secondaryview.Text = Convert.ToString(value);
              
-                mainview.Text = "Invaild Input";
+               
             }
         }
     }
