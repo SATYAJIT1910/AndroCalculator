@@ -67,17 +67,17 @@ namespace AndroCalculator
             this.digit7 = new System.Windows.Forms.Button();
             this.deg2 = new System.Windows.Forms.Button();
             this.options = new System.Windows.Forms.Button();
-            this.mainview = new System.Windows.Forms.TextBox();
-            this.secondaryview = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chooseThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainview = new System.Windows.Forms.TextBox();
+            this.secondaryview = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -380,6 +380,7 @@ namespace AndroCalculator
             this.equal.TabIndex = 19;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = true;
+            this.equal.Click += new System.EventHandler(this.equal_Click);
             // 
             // plus
             // 
@@ -394,6 +395,7 @@ namespace AndroCalculator
             this.plus.TabIndex = 18;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
+            this.plus.Click += new System.EventHandler(this.plus_Click);
             // 
             // dot
             // 
@@ -422,6 +424,7 @@ namespace AndroCalculator
             this.digit0.TabIndex = 15;
             this.digit0.Text = "0";
             this.digit0.UseVisualStyleBackColor = true;
+            this.digit0.Click += new System.EventHandler(this.digit0_Click);
             // 
             // minus
             // 
@@ -436,6 +439,7 @@ namespace AndroCalculator
             this.minus.TabIndex = 13;
             this.minus.Text = "−";
             this.minus.UseVisualStyleBackColor = true;
+            this.minus.Click += new System.EventHandler(this.minus_Click);
             // 
             // digit3
             // 
@@ -450,6 +454,7 @@ namespace AndroCalculator
             this.digit3.TabIndex = 12;
             this.digit3.Text = "3";
             this.digit3.UseVisualStyleBackColor = true;
+            this.digit3.Click += new System.EventHandler(this.digit3_Click);
             // 
             // digit2
             // 
@@ -464,6 +469,7 @@ namespace AndroCalculator
             this.digit2.TabIndex = 11;
             this.digit2.Text = "2";
             this.digit2.UseVisualStyleBackColor = true;
+            this.digit2.Click += new System.EventHandler(this.digit2_Click);
             // 
             // digit1
             // 
@@ -478,6 +484,7 @@ namespace AndroCalculator
             this.digit1.TabIndex = 10;
             this.digit1.Text = "1";
             this.digit1.UseVisualStyleBackColor = true;
+            this.digit1.Click += new System.EventHandler(this.digit1_Click);
             // 
             // multiply
             // 
@@ -492,6 +499,7 @@ namespace AndroCalculator
             this.multiply.TabIndex = 8;
             this.multiply.Text = "×";
             this.multiply.UseVisualStyleBackColor = true;
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
             // 
             // digit6
             // 
@@ -506,6 +514,7 @@ namespace AndroCalculator
             this.digit6.TabIndex = 7;
             this.digit6.Text = "6";
             this.digit6.UseVisualStyleBackColor = true;
+            this.digit6.Click += new System.EventHandler(this.digit6_Click);
             // 
             // digit5
             // 
@@ -520,6 +529,7 @@ namespace AndroCalculator
             this.digit5.TabIndex = 6;
             this.digit5.Text = "5";
             this.digit5.UseVisualStyleBackColor = true;
+            this.digit5.Click += new System.EventHandler(this.digit5_Click);
             // 
             // digit4
             // 
@@ -534,6 +544,7 @@ namespace AndroCalculator
             this.digit4.TabIndex = 5;
             this.digit4.Text = "4";
             this.digit4.UseVisualStyleBackColor = true;
+            this.digit4.Click += new System.EventHandler(this.digit4_Click);
             // 
             // backspace
             // 
@@ -562,6 +573,7 @@ namespace AndroCalculator
             this.divide.TabIndex = 3;
             this.divide.Text = "÷";
             this.divide.UseVisualStyleBackColor = true;
+            this.divide.Click += new System.EventHandler(this.divide_Click);
             // 
             // digit9
             // 
@@ -576,6 +588,7 @@ namespace AndroCalculator
             this.digit9.TabIndex = 2;
             this.digit9.Text = "9";
             this.digit9.UseVisualStyleBackColor = true;
+            this.digit9.Click += new System.EventHandler(this.digit9_Click);
             // 
             // digit8
             // 
@@ -590,6 +603,7 @@ namespace AndroCalculator
             this.digit8.TabIndex = 1;
             this.digit8.Text = "8";
             this.digit8.UseVisualStyleBackColor = true;
+            this.digit8.Click += new System.EventHandler(this.digit8_Click);
             // 
             // digit7
             // 
@@ -604,6 +618,7 @@ namespace AndroCalculator
             this.digit7.TabIndex = 0;
             this.digit7.Text = "7";
             this.digit7.UseVisualStyleBackColor = true;
+            this.digit7.Click += new System.EventHandler(this.digit7_Click);
             // 
             // deg2
             // 
@@ -632,6 +647,69 @@ namespace AndroCalculator
             this.toolTip1.SetToolTip(this.options, "Right Click for Options\r\n");
             this.options.UseVisualStyleBackColor = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.historyToolStripMenuItem,
+            this.chooseThemeToolStripMenuItem,
+            this.sendFeedbackToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 114);
+            // 
+            // historyToolStripMenuItem
+            // 
+            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.historyToolStripMenuItem.Text = "History";
+            // 
+            // chooseThemeToolStripMenuItem
+            // 
+            this.chooseThemeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightToolStripMenuItem,
+            this.darkToolStripMenuItem});
+            this.chooseThemeToolStripMenuItem.Name = "chooseThemeToolStripMenuItem";
+            this.chooseThemeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.chooseThemeToolStripMenuItem.Text = "Choose Theme";
+            // 
+            // lightToolStripMenuItem
+            // 
+            this.lightToolStripMenuItem.Checked = true;
+            this.lightToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.lightToolStripMenuItem.Text = "Light";
+            this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
+            // 
+            // darkToolStripMenuItem
+            // 
+            this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.darkToolStripMenuItem.Text = "Dark";
+            this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
+            // 
+            // sendFeedbackToolStripMenuItem
+            // 
+            this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
+            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
+            this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // mainview
             // 
             this.mainview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
@@ -641,7 +719,7 @@ namespace AndroCalculator
             this.mainview.Name = "mainview";
             this.mainview.Size = new System.Drawing.Size(258, 53);
             this.mainview.TabIndex = 4;
-            this.mainview.Text = "999X99";
+            this.mainview.Text = " ";
             this.mainview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // secondaryview
@@ -654,75 +732,12 @@ namespace AndroCalculator
             this.secondaryview.Name = "secondaryview";
             this.secondaryview.Size = new System.Drawing.Size(258, 31);
             this.secondaryview.TabIndex = 5;
-            this.secondaryview.Text = "999X99";
+            this.secondaryview.Text = " ";
             this.secondaryview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historyToolStripMenuItem,
-            this.chooseThemeToolStripMenuItem,
-            this.sendFeedbackToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
-            // 
-            // historyToolStripMenuItem
-            // 
-            this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.historyToolStripMenuItem.Text = "History";
-            // 
-            // chooseThemeToolStripMenuItem
-            // 
-            this.chooseThemeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lightToolStripMenuItem,
-            this.darkToolStripMenuItem});
-            this.chooseThemeToolStripMenuItem.Name = "chooseThemeToolStripMenuItem";
-            this.chooseThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.chooseThemeToolStripMenuItem.Text = "Choose Theme";
-            // 
-            // sendFeedbackToolStripMenuItem
-            // 
-            this.sendFeedbackToolStripMenuItem.Name = "sendFeedbackToolStripMenuItem";
-            this.sendFeedbackToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
-            this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.helpToolStripMenuItem.Text = "Help";
-            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
-            // 
-            // lightToolStripMenuItem
-            // 
-            this.lightToolStripMenuItem.Checked = true;
-            this.lightToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lightToolStripMenuItem.Text = "Light";
-            this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
-            // 
-            // darkToolStripMenuItem
-            // 
-            this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.darkToolStripMenuItem.Text = "Dark";
-            this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
             // 
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 
