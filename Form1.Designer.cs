@@ -157,6 +157,7 @@ namespace AndroCalculator
             this.inv.TabIndex = 0;
             this.inv.Text = "INV";
             this.inv.UseVisualStyleBackColor = true;
+            this.inv.Click += new System.EventHandler(this.inv_Click);
             // 
             // deg1
             // 
@@ -191,7 +192,7 @@ namespace AndroCalculator
             // 
             this.cos.FlatAppearance.BorderSize = 0;
             this.cos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F);
+            this.cos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.cos.Location = new System.Drawing.Point(171, 0);
             this.cos.Margin = new System.Windows.Forms.Padding(0);

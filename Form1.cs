@@ -52,5 +52,37 @@ namespace AndroCalculator
             }
 
         }
+        int countstate = 0;//ui state counter
+        private void inv_Click(object sender, EventArgs e)
+        {
+            if (countstate == 1)
+            {
+
+            sin.Text = "sin⁻¹";
+            cos.Text = "cos⁻¹";
+            tan.Text = "tan⁻¹";
+            ln.Text = "e⁻ˣ";
+            log.Text = "10ˣ";
+            squareroot.Text = "x²";
+                inv.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(233)))));
+                countstate = 0;
+            }
+            else
+            {
+                sin.Text = "sin";
+                cos.Text = "cos";
+                tan.Text = "tan";
+                ln.Text = "ln";
+                log.Text = "log";
+                squareroot.Text = "√";
+                countstate = 1;
+                inv.BackColor = Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(233)))));
+
+            }
+
+
+
+
+        }
     }
 }
