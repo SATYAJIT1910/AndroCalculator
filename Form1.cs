@@ -226,5 +226,10 @@ namespace AndroCalculator
         {
             //MessageBox.Show("Right click");
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
