@@ -171,6 +171,7 @@ namespace AndroCalculator
             this.deg1.TabIndex = 1;
             this.deg1.Text = "DEG";
             this.deg1.UseVisualStyleBackColor = true;
+            this.deg1.Click += new System.EventHandler(this.deg1_Click);
             // 
             // sin
             // 
@@ -603,6 +604,7 @@ namespace AndroCalculator
             this.deg2.TabIndex = 2;
             this.deg2.Text = "DEG";
             this.deg2.UseVisualStyleBackColor = true;
+            this.deg2.Click += new System.EventHandler(this.deg2_Click);
             // 
             // options
             // 
