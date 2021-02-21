@@ -85,6 +85,16 @@ namespace AndroCalculator
 
         }
 
+        
+
+
+
+
+
+
+
+
+
         //below code is from enable mouse drag on scrren for a borderless c# form 
         Point lastPoint;
 
@@ -100,6 +110,57 @@ namespace AndroCalculator
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+
+     //Codes for implemation of Dark Mode
+
+        int darkmode = 0;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (darkmode == 0)
+            {
+                this.BackColor = Color.Black;
+                digit0.ForeColor = SystemColors.Control;
+                digit1.ForeColor = SystemColors.Control;
+                digit2.ForeColor = SystemColors.Control;
+                digit3.ForeColor = SystemColors.Control;
+                digit4.ForeColor = SystemColors.Control;
+                digit5.ForeColor = SystemColors.Control;
+                digit6.ForeColor = SystemColors.Control;
+                digit7.ForeColor = SystemColors.Control;
+                digit8.ForeColor = SystemColors.Control;
+                digit9.ForeColor = SystemColors.Control;
+                dot.ForeColor = SystemColors.Control;
+                mainview.ForeColor = SystemColors.Control;
+                mainview.BackColor = Color.Black;
+                secondaryview.BackColor = Color.Black;
+
+
+
+                darkmode = 1;
+            }
+            else
+            {
+                this.BackColor = SystemColors.Control;
+                digit0.ForeColor= Color.Black;
+                digit1.ForeColor = Color.Black;
+                digit2.ForeColor = Color.Black;
+                digit3.ForeColor = Color.Black;
+                digit4.ForeColor = Color.Black;
+                digit5.ForeColor = Color.Black;
+                digit6.ForeColor = Color.Black;
+                digit7.ForeColor = Color.Black;
+                digit8.ForeColor = Color.Black;
+                digit9.ForeColor = Color.Black;
+                mainview.ForeColor = Color.Black;
+                mainview.BackColor = SystemColors.Control;
+                secondaryview.BackColor = SystemColors.Control;
+
+                darkmode = 0;
+
+            }
+
         }
     }
 }

@@ -68,6 +68,7 @@ namespace AndroCalculator
             this.options = new System.Windows.Forms.Button();
             this.mainview = new System.Windows.Forms.TextBox();
             this.secondaryview = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -644,11 +645,23 @@ namespace AndroCalculator
             this.secondaryview.Text = "999X99";
             this.secondaryview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 19);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "dark";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(287, 522);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.secondaryview);
             this.Controls.Add(this.mainview);
             this.Controls.Add(this.options);
@@ -713,6 +726,7 @@ namespace AndroCalculator
         private System.Windows.Forms.Button options;
         private System.Windows.Forms.TextBox mainview;
         private System.Windows.Forms.TextBox secondaryview;
+        private System.Windows.Forms.Button button1;
     }
 }
 
