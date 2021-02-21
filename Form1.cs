@@ -162,5 +162,69 @@ namespace AndroCalculator
             }
 
         }
+
+        private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please send us your Feedback at satyajit.edu@outlook.com","Send Feedback");
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Go to the https://github.com/SATYAJIT1910/AndroCalculator", "Help");
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = SystemColors.Control;
+            digit0.ForeColor = Color.Black;
+            digit1.ForeColor = Color.Black;
+            digit2.ForeColor = Color.Black;
+            digit3.ForeColor = Color.Black;
+            digit4.ForeColor = Color.Black;
+            digit5.ForeColor = Color.Black;
+            digit6.ForeColor = Color.Black;
+            digit7.ForeColor = Color.Black;
+            digit8.ForeColor = Color.Black;
+            digit9.ForeColor = Color.Black;
+            mainview.ForeColor = Color.Black;
+            mainview.BackColor = SystemColors.Control;
+            secondaryview.BackColor = SystemColors.Control;
+            lightToolStripMenuItem.Checked = true;
+            darkToolStripMenuItem.Checked = false;
+
+
+            darkmode = 0;
+
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Black;
+            digit0.ForeColor = SystemColors.Control;
+            digit1.ForeColor = SystemColors.Control;
+            digit2.ForeColor = SystemColors.Control;
+            digit3.ForeColor = SystemColors.Control;
+            digit4.ForeColor = SystemColors.Control;
+            digit5.ForeColor = SystemColors.Control;
+            digit6.ForeColor = SystemColors.Control;
+            digit7.ForeColor = SystemColors.Control;
+            digit8.ForeColor = SystemColors.Control;
+            digit9.ForeColor = SystemColors.Control;
+            dot.ForeColor = SystemColors.Control;
+            mainview.ForeColor = SystemColors.Control;
+            mainview.BackColor = Color.Black;
+            secondaryview.BackColor = Color.Black;
+            lightToolStripMenuItem.Checked = false;
+            darkToolStripMenuItem.Checked = true;
+
+
+            darkmode = 1;
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            //MessageBox.Show("Right click");
+        }
     }
 }
