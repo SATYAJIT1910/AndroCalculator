@@ -233,7 +233,7 @@ namespace AndroCalculator
         }
 
         //writing the backend codes
-        string mainstring;
+        string mainstring="";
 
         private void digit1_Click(object sender, EventArgs e)
         {
@@ -297,39 +297,80 @@ namespace AndroCalculator
 
         private void plus_Click(object sender, EventArgs e)
         {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+                
+            }
+            else
+            {
+
             mainstring = mainstring + '+';
+            }
             mainview.Text = mainstring;
             
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
             mainstring = mainstring + '-';
+            }
             mainview.Text = mainstring;
             
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
             mainstring = mainstring + '*';
+            }
             mainview.Text = mainstring;
             
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-")|| string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
             mainstring = mainstring + '/';
+            }
             mainview.Text = mainstring;
         }
 
         private void equal_Click(object sender, EventArgs e)
         {
-          
 
+            if (mainstring.Length < 15)
+            {
+
+           
         
             string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
             mainview.Text = Convert.ToString(value);
             secondaryview.Text = Convert.ToString(value);
+            }
+            else
+            {
+             
+                mainview.Text = "Invaild Input";
+            }
         }
     }
 }
