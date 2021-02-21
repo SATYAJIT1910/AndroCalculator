@@ -4,3 +4,5 @@ Currently The project has a working UI.Backend codes are not written yet . Looki
 
 
 Original google calculator app : https://play.google.com/store/apps/details?id=com.google.android.calculator&hl=en_IN&gl=US
+
+![](https://i.ibb.co/S6swDxf/Androcalculator-demo1.gif)
