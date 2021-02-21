@@ -231,5 +231,172 @@ namespace AndroCalculator
         {
             Close();
         }
+
+        //writing the backend codes
+        string mainstring="";
+
+        private void digit1_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '1';
+            mainview.Text = mainstring;
+        }
+
+        private void digit2_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '2';
+            mainview.Text = mainstring;
+        }
+
+        private void digit3_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '3';
+            mainview.Text = mainstring;
+        }
+
+        private void digit4_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '4';
+            mainview.Text = mainstring;
+        }
+
+        private void digit5_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '5';
+            mainview.Text = mainstring;
+        }
+
+        private void digit6_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '6';
+            mainview.Text = mainstring;
+        }
+
+        private void digit7_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '7';
+            mainview.Text = mainstring;
+        }
+
+        private void digit8_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '8';
+            mainview.Text = mainstring;
+        }
+
+        private void digit9_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '9';
+            mainview.Text = mainstring;
+        }
+
+        private void digit0_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + '0';
+            mainview.Text = mainstring;
+        }
+
+        private void plus_Click(object sender, EventArgs e)
+        {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+                
+            }
+            else
+            {
+
+            mainstring = mainstring + '+';
+            }
+            mainview.Text = mainstring;
+            
+        }
+
+        private void minus_Click(object sender, EventArgs e)
+        {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
+            mainstring = mainstring + '-';
+            }
+            mainview.Text = mainstring;
+            
+        }
+
+        private void multiply_Click(object sender, EventArgs e)
+        {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
+            mainstring = mainstring + '*';
+            }
+            mainview.Text = mainstring;
+            
+        }
+
+        private void divide_Click(object sender, EventArgs e)
+        {
+            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-")|| string.IsNullOrEmpty(mainstring))
+            {
+
+            }
+            else
+            {
+
+            mainstring = mainstring + '/';
+            }
+            mainview.Text = mainstring;
+        }
+
+        private void equal_Click(object sender, EventArgs e)
+        {
+
+            if (mainstring.Length > 15|| mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
+            {
+
+                mainview.Text = "Invaild Input";
+
+            }
+            else
+            {
+            string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+            mainview.Text = Convert.ToString(value);
+            secondaryview.Text = Convert.ToString(value);
+             
+               
+            }
+        }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+            //code for backspace
+            int textlength = mainview.Text.Length;
+            if (textlength > 0)
+            {
+                mainview.Text = mainview.Text.Substring(0, textlength - 1);
+                
+            }
+            mainview.Focus();
+            mainview.SelectionStart = mainview.Text.Length;
+            mainview.SelectionLength = 0;
+            ////
+            mainstring = mainview.Text;//copying the mainview text update to mainstring
+        }
+
+        private void options_Click(object sender, EventArgs e)
+        {
+            //code for contextmenu access by left click
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            contextMenuStrip1.Show(ptLowerLeft);
+            ////
+        }
     }
 }
