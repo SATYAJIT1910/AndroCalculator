@@ -388,5 +388,15 @@ namespace AndroCalculator
             ////
             mainstring = mainview.Text;//copying the mainview text update to mainstring
         }
+
+        private void options_Click(object sender, EventArgs e)
+        {
+            //code for contextmenu access by left click
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            contextMenuStrip1.Show(ptLowerLeft);
+            ////
+        }
     }
 }

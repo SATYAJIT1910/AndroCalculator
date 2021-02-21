@@ -636,7 +636,6 @@ namespace AndroCalculator
             // 
             // options
             // 
-            this.options.ContextMenuStrip = this.contextMenuStrip1;
             this.options.FlatAppearance.BorderSize = 0;
             this.options.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.options.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
@@ -645,8 +644,9 @@ namespace AndroCalculator
             this.options.Size = new System.Drawing.Size(31, 46);
             this.options.TabIndex = 3;
             this.options.Text = "⋮";
-            this.toolTip1.SetToolTip(this.options, "Right Click for Options\r\n");
+            this.toolTip1.SetToolTip(this.options, "Options");
             this.options.UseVisualStyleBackColor = true;
+            this.options.Click += new System.EventHandler(this.options_Click);
             // 
             // contextMenuStrip1
             // 
