@@ -559,6 +559,7 @@ namespace AndroCalculator
             this.backspace.TabIndex = 4;
             this.backspace.Text = "⌫";
             this.backspace.UseVisualStyleBackColor = true;
+            this.backspace.Click += new System.EventHandler(this.backspace_Click);
             // 
             // divide
             // 

@@ -372,5 +372,21 @@ namespace AndroCalculator
                
             }
         }
+
+        private void backspace_Click(object sender, EventArgs e)
+        {
+            //code for backspace
+            int textlength = mainview.Text.Length;
+            if (textlength > 0)
+            {
+                mainview.Text = mainview.Text.Substring(0, textlength - 1);
+                
+            }
+            mainview.Focus();
+            mainview.SelectionStart = mainview.Text.Length;
+            mainview.SelectionLength = 0;
+            ////
+            mainstring = mainview.Text;//copying the mainview text update to mainstring
+        }
     }
 }
