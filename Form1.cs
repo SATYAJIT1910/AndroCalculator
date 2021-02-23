@@ -366,12 +366,25 @@ namespace AndroCalculator
             else
             {
                 //testing capability
-               // mainstring = "sin(45)+2";
+                // mainstring = "sin(45)+2";
                 //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+                if (deg2.Text=="DEG")
+                {
+
+                mXparser.setDegreesMode();
                 Expression eh = new Expression(mainstring);
                 string value = eh.calculate().ToString();
+                mainview.Text = Convert.ToString(value);
+                }
+                else
+                {
+                    mXparser.setRadiansMode();
+                    Expression eh = new Expression(mainstring);
+                    string value = eh.calculate().ToString();
+                    mainview.Text = Convert.ToString(value);
+                }
+       
                 
-            mainview.Text = Convert.ToString(value);
             //secondaryview.Text = Convert.ToString(value);
              
                
@@ -411,22 +424,16 @@ namespace AndroCalculator
 
         private void sin_Click(object sender, EventArgs e)
         {
-            if(countstate==1 && deg2.Text == "DEG"){
 
-                mainstring += "sin(rad(";
-
-            }
-            else if(countstate==1 && deg2.Text == "RAD")
+            if (countstate == 1)
             {
                 mainstring += "sin(";
             }
-            else if(countstate==0 && deg2.Text == "DEG"){
-                mainstring += "deg(asin(";
-            }
-            else if(countstate==0 && deg2.Text == "RAD")
+            else
             {
                 mainstring += "asin(";
             }
+            
             secondaryview.Text = mainstring;
 
         }
@@ -434,74 +441,37 @@ namespace AndroCalculator
 
         private void closepar_Click(object sender, EventArgs e)
         {
-            /*
-            if (countstate == 1 && deg2.Text == "DEG")
-            {
 
-                mainstring += "))";
-
-            }
-            else if (countstate == 1 && deg2.Text == "RAD")
-            {
-                mainstring += ")";
-            }
-            else if (countstate == 0 && deg2.Text == "DEG")
-            {
-                mainstring += "))";
-            }
-            else if (countstate == 0 && deg2.Text == "RAD")
-            {
-                mainstring += ")";
-            }
-            */
             mainstring += ")";
             secondaryview.Text = mainstring;
         }
 
         private void cos_Click(object sender, EventArgs e)
         {
-            if (countstate == 1 && deg2.Text == "DEG")
-            {
-
-                mainstring += "cos(rad(";
-
-            }
-            else if (countstate == 1 && deg2.Text == "RAD")
+            if (countstate == 1)
             {
                 mainstring += "cos(";
             }
-            else if (countstate == 0 && deg2.Text == "DEG")
-            {
-                mainstring += "deg(acos(";
-            }
-            else if (countstate == 0 && deg2.Text == "RAD")
+            else
             {
                 mainstring += "acos(";
             }
+
             secondaryview.Text = mainstring;
 
         }
 
         private void tan_Click(object sender, EventArgs e)
         {
-            if (countstate == 1 && deg2.Text == "DEG")
-            {
-
-                mainstring += "tan(rad(";
-
-            }
-            else if (countstate == 1 && deg2.Text == "RAD")
+            if (countstate == 1)
             {
                 mainstring += "tan(";
             }
-            else if (countstate == 0 && deg2.Text == "DEG")
-            {
-                mainstring += "deg(atan(";
-            }
-            else if (countstate == 0 && deg2.Text == "RAD")
+            else
             {
                 mainstring += "atan(";
             }
+
             secondaryview.Text = mainstring;
 
         }
