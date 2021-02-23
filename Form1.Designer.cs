@@ -147,6 +147,7 @@ namespace AndroCalculator
             this.closepar.TabIndex = 13;
             this.closepar.Text = ")";
             this.closepar.UseVisualStyleBackColor = true;
+            this.closepar.Click += new System.EventHandler(this.closepar_Click);
             // 
             // openpar
             // 
@@ -273,6 +274,7 @@ namespace AndroCalculator
             this.tan.TabIndex = 4;
             this.tan.Text = "tan";
             this.tan.UseVisualStyleBackColor = true;
+            this.tan.Click += new System.EventHandler(this.tan_Click);
             // 
             // cos
             // 
@@ -287,6 +289,7 @@ namespace AndroCalculator
             this.cos.TabIndex = 3;
             this.cos.Text = "cos";
             this.cos.UseVisualStyleBackColor = true;
+            this.cos.Click += new System.EventHandler(this.cos_Click);
             // 
             // sin
             // 
@@ -301,6 +304,7 @@ namespace AndroCalculator
             this.sin.TabIndex = 2;
             this.sin.Text = "sin";
             this.sin.UseVisualStyleBackColor = true;
+            this.sin.Click += new System.EventHandler(this.sin_Click);
             // 
             // deg1
             // 
@@ -657,12 +661,12 @@ namespace AndroCalculator
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 114);
             // 
             // historyToolStripMenuItem
             // 
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.historyToolStripMenuItem.Text = "History";
             // 
             // chooseThemeToolStripMenuItem
@@ -671,7 +675,7 @@ namespace AndroCalculator
             this.lightToolStripMenuItem,
             this.darkToolStripMenuItem});
             this.chooseThemeToolStripMenuItem.Name = "chooseThemeToolStripMenuItem";
-            this.chooseThemeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chooseThemeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.chooseThemeToolStripMenuItem.Text = "Choose Theme";
             // 
             // lightToolStripMenuItem
@@ -679,14 +683,14 @@ namespace AndroCalculator
             this.lightToolStripMenuItem.Checked = true;
             this.lightToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
-            this.lightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.lightToolStripMenuItem.Text = "Light";
             this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
             // 
             // darkToolStripMenuItem
             // 
             this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
-            this.darkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
             this.darkToolStripMenuItem.Text = "Dark";
             this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
             // 
@@ -700,7 +704,7 @@ namespace AndroCalculator
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -708,7 +712,7 @@ namespace AndroCalculator
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 

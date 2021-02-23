@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using org.mariuszgromada.math.mxparser;
 namespace AndroCalculator
 {
     public partial class Form1 : Form
@@ -365,7 +365,12 @@ namespace AndroCalculator
             }
             else
             {
-            string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+                //testing capability
+               // mainstring = "sin(45)+2";
+                //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+                Expression eh = new Expression(mainstring);
+                string value = eh.calculate().ToString();
+                
             mainview.Text = Convert.ToString(value);
             secondaryview.Text = Convert.ToString(value);
              
@@ -397,6 +402,32 @@ namespace AndroCalculator
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
             contextMenuStrip1.Show(ptLowerLeft);
             ////
+        }
+
+        private void sin_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + "sin(";
+            mainview.Text = mainstring;
+        }
+
+        private void closepar_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + ')';
+            mainview.Text = mainstring;
+        }
+
+        private void cos_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + "cos(";
+            mainview.Text = mainstring;
+
+        }
+
+        private void tan_Click(object sender, EventArgs e)
+        {
+            mainstring = mainstring + "tan(";
+            mainview.Text = mainstring;
+
         }
     }
 }
