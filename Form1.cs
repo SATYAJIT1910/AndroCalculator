@@ -61,7 +61,7 @@ namespace AndroCalculator
             sin.Text = "sin⁻¹";
             cos.Text = "cos⁻¹";
             tan.Text = "tan⁻¹";
-            ln.Text = "e⁻ˣ";
+            ln.Text = "eˣ";
             log.Text = "10ˣ";
             squareroot.Text = "x²";
                 inv.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(233)))));
@@ -297,74 +297,47 @@ namespace AndroCalculator
 
         private void plus_Click(object sender, EventArgs e)
         {
-            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
-            {
-                
-            }
-            else
-            {
+
 
             mainstring = mainstring + '+';
-            }
+            
             secondaryview.Text = mainstring;
             
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
-            {
+ 
 
-            }
-            else
-            {
 
             mainstring = mainstring + '-';
-            }
+            
             secondaryview.Text = mainstring;
             
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
-            {
 
-            }
-            else
-            {
 
             mainstring = mainstring + '*';
-            }
+            
             secondaryview.Text = mainstring;
             
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
-            if (mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-")|| string.IsNullOrEmpty(mainstring))
-            {
-
-            }
-            else
-            {
 
             mainstring = mainstring + '/';
-            }
+            
             secondaryview.Text = mainstring;
         }
 
         private void equal_Click(object sender, EventArgs e)
         {
 
-            if (mainstring.Length > 15|| mainstring.EndsWith("+") || mainstring.EndsWith("/") || mainstring.EndsWith("*") || mainstring.EndsWith("-") || string.IsNullOrEmpty(mainstring))
-            {
 
-                mainview.Text = "Invaild Input";
-
-            }
-            else
-            {
                 //testing capability
                 // mainstring = "sin(45)+2";
                 //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
@@ -389,7 +362,7 @@ namespace AndroCalculator
              
                
             }
-        }
+        
 
         private void backspace_Click(object sender, EventArgs e)
         {
