@@ -163,6 +163,7 @@ namespace AndroCalculator
             this.openpar.TabIndex = 12;
             this.openpar.Text = "(";
             this.openpar.UseVisualStyleBackColor = true;
+            this.openpar.Click += new System.EventHandler(this.openpar_Click);
             // 
             // exp
             // 
@@ -742,10 +743,12 @@ namespace AndroCalculator
             // 
             this.secondaryview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.secondaryview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.secondaryview.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.secondaryview.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.secondaryview.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.secondaryview.Location = new System.Drawing.Point(12, 133);
             this.secondaryview.Name = "secondaryview";
+            this.secondaryview.ReadOnly = true;
             this.secondaryview.Size = new System.Drawing.Size(258, 31);
             this.secondaryview.TabIndex = 5;
             this.secondaryview.Text = " ";

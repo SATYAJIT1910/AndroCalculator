@@ -238,61 +238,61 @@ namespace AndroCalculator
         private void digit1_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '1';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit2_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '2';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit3_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '3';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit4_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '4';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit5_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '5';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit6_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '6';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit7_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '7';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit8_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '8';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit9_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '9';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void digit0_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '0';
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -306,7 +306,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '+';
             }
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
             
         }
 
@@ -321,7 +321,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '-';
             }
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
             
         }
 
@@ -336,7 +336,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '*';
             }
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
             
         }
 
@@ -351,7 +351,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '/';
             }
-            mainview.Text = mainstring;
+            secondaryview.Text = mainstring;
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -385,7 +385,7 @@ namespace AndroCalculator
                 }
        
                 
-            //secondaryview.Text = Convert.ToString(value);
+           
              
                
             }
@@ -393,23 +393,24 @@ namespace AndroCalculator
 
         private void backspace_Click(object sender, EventArgs e)
         {
-            /*
+            
             //code for backspace
-            int textlength = mainview.Text.Length;
+            int textlength = secondaryview.Text.Length;
             if (textlength > 0)
             {
-                mainview.Text = mainview.Text.Substring(0, textlength - 1);
+                secondaryview.Text = secondaryview.Text.Substring(0, textlength - 1);
                 
             }
-            mainview.Focus();
-            mainview.SelectionStart = mainview.Text.Length;
-            mainview.SelectionLength = 0;
-            ////
-            mainstring = mainview.Text;//copying the mainview text update to mainstring
-            */
+            secondaryview.Focus();
+            secondaryview.SelectionStart = mainview.Text.Length;
+            secondaryview.SelectionLength = 0;
+
+            mainstring = secondaryview.Text;
+          /*
             mainstring = "";
             mainview.Text = "";
             secondaryview.Text = "";
+          */
         }
 
         private void options_Click(object sender, EventArgs e)
@@ -552,6 +553,12 @@ namespace AndroCalculator
         private void percentage_Click(object sender, EventArgs e)
         {
             mainstring += "%";
+            secondaryview.Text = mainstring;
+        }
+
+        private void openpar_Click(object sender, EventArgs e)
+        {
+            mainstring += "(";
             secondaryview.Text = mainstring;
         }
     }
