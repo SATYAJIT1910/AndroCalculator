@@ -539,19 +539,43 @@ namespace AndroCalculator
 
         private void squareroot_Click(object sender, EventArgs e)
         {
+            if (countstate == 1)
+            {
+
             mainstring += "sqrt(";
+            }
+            else
+            {
+                mainstring += "^2";
+            }
             secondaryview.Text = mainstring;
         }
 
         private void log_Click(object sender, EventArgs e)
         {
+            if (countstate == 1)
+            {
+
             mainstring += "log10(";
+            }
+            else
+            {
+                mainstring += "10^";
+            }
             secondaryview.Text = mainstring;
         }
 
         private void ln_Click(object sender, EventArgs e)
         {
+            if (countstate == 1)
+            {
+
             mainstring += "ln(";
+            }
+            else
+            {
+            mainstring += "e^";
+            }
             secondaryview.Text = mainstring;
         }
 
