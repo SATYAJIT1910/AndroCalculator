@@ -317,7 +317,7 @@ namespace AndroCalculator
             this.deg1.Name = "deg1";
             this.deg1.Size = new System.Drawing.Size(57, 42);
             this.deg1.TabIndex = 1;
-            this.deg1.Text = "DEG";
+            this.deg1.Text = "RAD";
             this.deg1.UseVisualStyleBackColor = true;
             this.deg1.Click += new System.EventHandler(this.deg1_Click);
             // 
@@ -723,6 +723,7 @@ namespace AndroCalculator
             this.mainview.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
             this.mainview.Location = new System.Drawing.Point(12, 74);
             this.mainview.Name = "mainview";
+            this.mainview.ReadOnly = true;
             this.mainview.Size = new System.Drawing.Size(258, 53);
             this.mainview.TabIndex = 4;
             this.mainview.Text = " ";
