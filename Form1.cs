@@ -58,12 +58,12 @@ namespace AndroCalculator
             if (countstate == 1)
             {
 
-            sin.Text = "sin⁻¹";
-            cos.Text = "cos⁻¹";
-            tan.Text = "tan⁻¹";
-            ln.Text = "eˣ";
-            log.Text = "10ˣ";
-            squareroot.Text = "x²";
+                sin.Text = "sin⁻¹";
+                cos.Text = "cos⁻¹";
+                tan.Text = "tan⁻¹";
+                ln.Text = "eˣ";
+                log.Text = "10ˣ";
+                squareroot.Text = "x²";
                 inv.BackColor = Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(233)))));
                 countstate = 0;
             }
@@ -85,7 +85,7 @@ namespace AndroCalculator
 
         }
 
-        
+
 
 
 
@@ -113,7 +113,7 @@ namespace AndroCalculator
         }
 
 
-     //Codes for implemation of Dark Mode
+        //Codes for implemation of Dark Mode
 
         int darkmode = 0;
         private void button1_Click_1(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace AndroCalculator
             else
             {
                 this.BackColor = SystemColors.Control;
-                digit0.ForeColor= Color.Black;
+                digit0.ForeColor = Color.Black;
                 digit1.ForeColor = Color.Black;
                 digit2.ForeColor = Color.Black;
                 digit3.ForeColor = Color.Black;
@@ -165,7 +165,7 @@ namespace AndroCalculator
 
         private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Please send us your Feedback at satyajit.edu@outlook.com","Send Feedback");
+            MessageBox.Show("Please send us your Feedback at satyajit.edu@outlook.com", "Send Feedback");
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace AndroCalculator
         }
 
         //writing the backend codes
-        string mainstring="";
+        string mainstring = "";
 
         private void digit1_Click(object sender, EventArgs e)
         {
@@ -300,20 +300,20 @@ namespace AndroCalculator
 
 
             mainstring = mainstring + '+';
-            
+
             secondaryview.Text = mainstring;
-            
+
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
- 
+
 
 
             mainstring = mainstring + '-';
-            
+
             secondaryview.Text = mainstring;
-            
+
         }
 
         private void multiply_Click(object sender, EventArgs e)
@@ -321,16 +321,16 @@ namespace AndroCalculator
 
 
             mainstring = mainstring + '*';
-            
+
             secondaryview.Text = mainstring;
-            
+
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
 
             mainstring = mainstring + '/';
-            
+
             secondaryview.Text = mainstring;
         }
 
@@ -338,53 +338,56 @@ namespace AndroCalculator
         {
 
 
-                //testing capability
-                // mainstring = "sin(45)+2";
-                //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
-                if (deg2.Text=="DEG")
-                {
+            //testing capability
+            // mainstring = "sin(45)+2";
+            //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+            if (deg2.Text == "DEG")
+            {
 
                 mXparser.setDegreesMode();
                 Expression eh = new Expression(mainstring);
                 string value = eh.calculate().ToString();
                 mainview.Text = Convert.ToString(value);
-                }
-                else
-                {
-                    mXparser.setRadiansMode();
-                    Expression eh = new Expression(mainstring);
-                    string value = eh.calculate().ToString();
-                    mainview.Text = Convert.ToString(value);
-                }
-       
-                
-           
-             
-               
             }
-        
+            else
+            {
+                mXparser.setRadiansMode();
+                Expression eh = new Expression(mainstring);
+                string value = eh.calculate().ToString();
+                mainview.Text = Convert.ToString(value);
+            }
+
+
+
+
+
+        }
+
 
         private void backspace_Click(object sender, EventArgs e)
         {
-            
+
+            if (mainview.Text == "NaN")
+            {
+                mainview.Text = "";
+            }
             //code for backspace
             int textlength = secondaryview.Text.Length;
             if (textlength > 0)
             {
                 secondaryview.Text = secondaryview.Text.Substring(0, textlength - 1);
-                
+
             }
             secondaryview.Focus();
             secondaryview.SelectionStart = mainview.Text.Length;
             secondaryview.SelectionLength = 0;
 
             mainstring = secondaryview.Text;
-          /*
-            mainstring = "";
-            mainview.Text = "";
-            secondaryview.Text = "";
-          */
         }
+    
+
+
+       
 
         private void options_Click(object sender, EventArgs e)
         {
