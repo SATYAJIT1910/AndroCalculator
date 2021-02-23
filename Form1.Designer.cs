@@ -133,6 +133,7 @@ namespace AndroCalculator
             this.factorial.TabIndex = 14;
             this.factorial.Text = "!";
             this.factorial.UseVisualStyleBackColor = true;
+            this.factorial.Click += new System.EventHandler(this.factorial_Click);
             // 
             // closepar
             // 
@@ -176,6 +177,7 @@ namespace AndroCalculator
             this.exp.TabIndex = 11;
             this.exp.Text = "е";
             this.exp.UseVisualStyleBackColor = true;
+            this.exp.Click += new System.EventHandler(this.exp_Click);
             // 
             // pie
             // 
@@ -190,6 +192,7 @@ namespace AndroCalculator
             this.pie.TabIndex = 10;
             this.pie.Text = "∏";
             this.pie.UseVisualStyleBackColor = true;
+            this.pie.Click += new System.EventHandler(this.pie_Click);
             // 
             // root
             // 
@@ -204,6 +207,7 @@ namespace AndroCalculator
             this.root.TabIndex = 9;
             this.root.Text = "^";
             this.root.UseVisualStyleBackColor = true;
+            this.root.Click += new System.EventHandler(this.root_Click);
             // 
             // squareroot
             // 
@@ -218,6 +222,7 @@ namespace AndroCalculator
             this.squareroot.TabIndex = 8;
             this.squareroot.Text = "√";
             this.squareroot.UseVisualStyleBackColor = true;
+            this.squareroot.Click += new System.EventHandler(this.squareroot_Click);
             // 
             // log
             // 
@@ -232,6 +237,7 @@ namespace AndroCalculator
             this.log.TabIndex = 7;
             this.log.Text = "log";
             this.log.UseVisualStyleBackColor = true;
+            this.log.Click += new System.EventHandler(this.log_Click);
             // 
             // ln
             // 
@@ -246,6 +252,7 @@ namespace AndroCalculator
             this.ln.TabIndex = 6;
             this.ln.Text = "ln";
             this.ln.UseVisualStyleBackColor = true;
+            this.ln.Click += new System.EventHandler(this.ln_Click);
             // 
             // percentage
             // 
@@ -260,6 +267,7 @@ namespace AndroCalculator
             this.percentage.TabIndex = 5;
             this.percentage.Text = "%";
             this.percentage.UseVisualStyleBackColor = true;
+            this.percentage.Click += new System.EventHandler(this.percentage_Click);
             // 
             // tan
             // 
@@ -414,6 +422,7 @@ namespace AndroCalculator
             this.dot.TabIndex = 16;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = true;
+            this.dot.Click += new System.EventHandler(this.dot_Click);
             // 
             // digit0
             // 

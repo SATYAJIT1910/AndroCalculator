@@ -396,6 +396,7 @@ namespace AndroCalculator
             */
             mainstring = "";
             mainview.Text = "";
+            secondaryview.Text = "";
         }
 
         private void options_Click(object sender, EventArgs e)
@@ -433,6 +434,7 @@ namespace AndroCalculator
 
         private void closepar_Click(object sender, EventArgs e)
         {
+            /*
             if (countstate == 1 && deg2.Text == "DEG")
             {
 
@@ -451,21 +453,112 @@ namespace AndroCalculator
             {
                 mainstring += ")";
             }
+            */
+            mainstring += ")";
             secondaryview.Text = mainstring;
         }
 
         private void cos_Click(object sender, EventArgs e)
         {
-            mainstring = mainstring + "cos(rad(";
-            mainview.Text = mainstring;
+            if (countstate == 1 && deg2.Text == "DEG")
+            {
+
+                mainstring += "cos(rad(";
+
+            }
+            else if (countstate == 1 && deg2.Text == "RAD")
+            {
+                mainstring += "cos(";
+            }
+            else if (countstate == 0 && deg2.Text == "DEG")
+            {
+                mainstring += "deg(acos(";
+            }
+            else if (countstate == 0 && deg2.Text == "RAD")
+            {
+                mainstring += "acos(";
+            }
+            secondaryview.Text = mainstring;
 
         }
 
         private void tan_Click(object sender, EventArgs e)
         {
-            mainstring = mainstring + "tan(rad(";
-            mainview.Text = mainstring;
+            if (countstate == 1 && deg2.Text == "DEG")
+            {
 
+                mainstring += "tan(rad(";
+
+            }
+            else if (countstate == 1 && deg2.Text == "RAD")
+            {
+                mainstring += "tan(";
+            }
+            else if (countstate == 0 && deg2.Text == "DEG")
+            {
+                mainstring += "deg(atan(";
+            }
+            else if (countstate == 0 && deg2.Text == "RAD")
+            {
+                mainstring += "atan(";
+            }
+            secondaryview.Text = mainstring;
+
+        }
+
+        private void factorial_Click(object sender, EventArgs e)
+        {
+            mainstring += "!";
+            secondaryview.Text = mainstring;
+
+        }
+
+        private void dot_Click(object sender, EventArgs e)
+        {
+            mainstring += ".";
+            secondaryview.Text = mainstring;
+        }
+
+        private void exp_Click(object sender, EventArgs e)
+        {
+            mainstring += "e";
+            secondaryview.Text = mainstring;
+        }
+
+        private void pie_Click(object sender, EventArgs e)
+        {
+            mainstring += "pi";
+            secondaryview.Text = mainstring;
+        }
+
+        private void root_Click(object sender, EventArgs e)
+        {
+            mainstring += "^";
+            secondaryview.Text = mainstring;
+        }
+
+        private void squareroot_Click(object sender, EventArgs e)
+        {
+            mainstring += "sqrt(";
+            secondaryview.Text = mainstring;
+        }
+
+        private void log_Click(object sender, EventArgs e)
+        {
+            mainstring += "log10(";
+            secondaryview.Text = mainstring;
+        }
+
+        private void ln_Click(object sender, EventArgs e)
+        {
+            mainstring += "ln(";
+            secondaryview.Text = mainstring;
+        }
+
+        private void percentage_Click(object sender, EventArgs e)
+        {
+            mainstring += "%";
+            secondaryview.Text = mainstring;
         }
     }
 }
