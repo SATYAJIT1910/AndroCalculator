@@ -15,6 +15,7 @@ namespace AndroCalculator
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -384,10 +385,10 @@ namespace AndroCalculator
 
             mainstring = secondaryview.Text;
         }
-    
 
 
-       
+
+
 
         private void options_Click(object sender, EventArgs e)
         {
@@ -410,11 +411,11 @@ namespace AndroCalculator
             {
                 mainstring += "asin(";
             }
-            
+
             secondaryview.Text = mainstring;
 
         }
-        
+
 
         private void closepar_Click(object sender, EventArgs e)
         {
@@ -489,7 +490,7 @@ namespace AndroCalculator
             if (countstate == 1)
             {
 
-            mainstring += "sqrt(";
+                mainstring += "sqrt(";
             }
             else
             {
@@ -503,7 +504,7 @@ namespace AndroCalculator
             if (countstate == 1)
             {
 
-            mainstring += "log10(";
+                mainstring += "log10(";
             }
             else
             {
@@ -517,11 +518,11 @@ namespace AndroCalculator
             if (countstate == 1)
             {
 
-            mainstring += "ln(";
+                mainstring += "ln(";
             }
             else
             {
-            mainstring += "e^";
+                mainstring += "e^";
             }
             secondaryview.Text = mainstring;
         }
@@ -537,5 +538,130 @@ namespace AndroCalculator
             mainstring += "(";
             secondaryview.Text = mainstring;
         }
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+           // MessageBox.Show(e.KeyCode.ToString());
+
+
+            if(e.KeyCode==Keys.Add || e.Shift && e.KeyCode == Keys.Oemplus)
+            {
+                plus.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract || e.Shift && e.KeyCode == Keys.OemMinus)
+            {
+                minus.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply || e.Shift && e.KeyCode == Keys.D8)
+            {
+                multiply.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D9)
+            {
+                openpar.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D0)
+            {
+                closepar.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.OemCloseBrackets)
+            {
+                closepar.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D1)
+            {
+                factorial.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D6)
+            {
+                root.PerformClick();
+            }
+            else if (e.Shift && e.KeyCode == Keys.D5)
+            {
+                percentage.PerformClick();
+            }
+            else if (e.Control && e.Shift && e.KeyCode == Keys.I)
+            {
+                inv.PerformClick();
+                
+            }
+            else if (e.Control && e.Shift && e.KeyCode == Keys.R)
+            {
+                deg1.PerformClick();
+
+            }
+            else if (e.Shift && e.KeyCode == Keys.D5)
+            {
+                percentage.PerformClick();
+            }
+            else if(e.KeyCode==Keys.Divide ||e.KeyCode==Keys.OemQuestion)
+            {
+                divide.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad0 || e.KeyCode == Keys.D0)
+            {
+                digit0.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
+            {
+                digit1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
+            {
+                digit2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
+            {
+                digit3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
+            {
+                digit4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad5 || e.KeyCode == Keys.D5)
+            {
+                digit5.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad6 || e.KeyCode == Keys.D6)
+            {
+                digit6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad7 || e.KeyCode == Keys.D7)
+            {
+                digit7.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad8 || e.KeyCode == Keys.D8)
+            {
+                digit8.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
+            {
+                digit9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                backspace.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
+            {
+                digit9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
+            {
+                digit9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
+            {
+                digit9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.OemPeriod||e.KeyCode==Keys.Decimal)
+            {
+                dot.PerformClick();
+            }
+
+           
+
+
+        }
+       
     }
 }
