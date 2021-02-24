@@ -12,6 +12,7 @@ namespace AndroCalculator
 {
     public partial class Form1 : Form
     {
+        public static int darkmode = 0;
         public Form1()
         {
             InitializeComponent();
@@ -116,7 +117,7 @@ namespace AndroCalculator
 
         //Codes for implemation of Dark Mode
 
-        int darkmode = 0;
+        
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (darkmode == 0)
@@ -667,6 +668,16 @@ namespace AndroCalculator
         private void Form1_Activated(object sender, EventArgs e)
         {
             secondaryview.Focus();
+        }
+
+
+        //history section
+
+        //this code is to openup the history form
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var myForm = new Form2();
+            myForm.Show();
         }
     }
 }
