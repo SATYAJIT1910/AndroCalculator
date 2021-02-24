@@ -554,11 +554,11 @@ namespace AndroCalculator
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-           // MessageBox.Show(e.KeyCode.ToString());
+            // MessageBox.Show(e.KeyCode.ToString());
 
 
             if(e.KeyCode==Keys.Add || e.Shift && e.KeyCode == Keys.Oemplus)
-            {
+            { 
                 plus.PerformClick();
             }
             else if (e.KeyCode == Keys.Subtract || e.Shift && e.KeyCode == Keys.OemMinus)
@@ -671,15 +671,13 @@ namespace AndroCalculator
             {
                 dot.PerformClick();
             }
-            else if (e.KeyCode == Keys.Tab)
-            {
-                secondaryview.Focus();
-            }
-            else if (e.KeyCode == Keys.Enter)
+            else if (e.KeyCode==Keys.Space)
            {
+                //MessageBox.Show(e.KeyCode.ToString());
                 //SendKeys.Send('{ENTER}');
                 equal.PerformClick();
             }
+
 
            
 

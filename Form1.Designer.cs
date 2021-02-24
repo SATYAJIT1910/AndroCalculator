@@ -406,6 +406,7 @@ namespace AndroCalculator
             this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(54, 49);
             this.equal.TabIndex = 0;
+            this.equal.TabStop = false;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = true;
             this.equal.Click += new System.EventHandler(this.equal_Click);
