@@ -665,6 +665,15 @@ namespace AndroCalculator
             {
                 dot.PerformClick();
             }
+            else if (e.KeyCode == Keys.Tab)
+            {
+                secondaryview.Focus();
+            }
+            else if (e.KeyCode == Keys.Return)
+            {
+                //SendKeys.Send('{ENTER}');
+                equal.PerformClick();
+            }
 
            
 
@@ -677,7 +686,7 @@ namespace AndroCalculator
             secondaryview.Focus();
         }
 
-
+        
         //history section
 
         //this code is to openup the history form
@@ -685,6 +694,11 @@ namespace AndroCalculator
         {
             var myForm = new Form2();
             myForm.Show();
+        }
+
+        private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            secondaryview.Focus();
         }
     }
 }

@@ -88,6 +88,7 @@ namespace AndroCalculator
         {
             listBox1.Items.Clear();
             historystr = "";
+            Form1.hist = "";
         }
 
         private void options_fr2_Click(object sender, EventArgs e)
