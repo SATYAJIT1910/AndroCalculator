@@ -766,8 +766,11 @@ namespace AndroCalculator
             this.mainview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainview.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
             this.mainview.Location = new System.Drawing.Point(12, 74);
+            this.mainview.MaxLength = 25;
             this.mainview.Name = "mainview";
             this.mainview.ReadOnly = true;
+            this.mainview.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.mainview.ShortcutsEnabled = false;
             this.mainview.Size = new System.Drawing.Size(258, 53);
             this.mainview.TabIndex = 4;
             this.mainview.TabStop = false;
@@ -819,6 +822,7 @@ namespace AndroCalculator
             this.Text = "Form1";
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.tableLayoutPanel1.ResumeLayout(false);

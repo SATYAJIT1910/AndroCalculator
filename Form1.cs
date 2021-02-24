@@ -242,61 +242,61 @@ namespace AndroCalculator
         private void digit1_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '1';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit2_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '2';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit3_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '3';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit4_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '4';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit5_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '5';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit6_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '6';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit7_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '7';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit8_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '8';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit9_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '9';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void digit0_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '0';
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -305,7 +305,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '+';
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
@@ -316,7 +316,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '-';
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
@@ -326,7 +326,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '*';
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
@@ -335,7 +335,7 @@ namespace AndroCalculator
 
             mainstring = mainstring + '/';
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -345,24 +345,30 @@ namespace AndroCalculator
             //testing capability
             // mainstring = "sin(45)+2";
             //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+            string value;
             if (deg2.Text == "DEG")
             {
 
                 mXparser.setDegreesMode();
                 Expression eh = new Expression(mainstring);
-                string value = eh.calculate().ToString();
+                value = eh.calculate().ToString();
                 mainview.Text = Convert.ToString(value);
             }
             else
             {
                 mXparser.setRadiansMode();
                 Expression eh = new Expression(mainstring);
-                string value = eh.calculate().ToString();
+                value = eh.calculate().ToString();
                 mainview.Text = Convert.ToString(value);
             }
+
+
+
+
             //storing the history
       
-            hist += mainview.Text + " = " + secondaryview.Text + '\n';
+            hist += value + " = " + mainstring + '\n';
+            secondaryview.Text = "";
 
 
 
@@ -376,22 +382,22 @@ namespace AndroCalculator
         private void backspace_Click(object sender, EventArgs e)
         {
 
-            if (mainview.Text == "NaN")
-            {
-                mainview.Text = "";
-            }
+           // if (secondaryview.Text == "NaN")
+          //  {
+           //     mainview.Text = "";
+          //  }
             //code for backspace
-            int textlength = secondaryview.Text.Length;
+            int textlength = mainview.Text.Length;
             if (textlength > 0)
             {
-                secondaryview.Text = secondaryview.Text.Substring(0, textlength - 1);
+                mainview.Text = mainview.Text.Substring(0, textlength - 1);
 
             }
             //secondaryview.Focus();
             secondaryview.SelectionStart = mainview.Text.Length;
             secondaryview.SelectionLength = 0;
 
-            mainstring = secondaryview.Text;
+            mainstring = mainview.Text;
         }
 
 
@@ -420,7 +426,7 @@ namespace AndroCalculator
                 mainstring += "asin(";
             }
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
@@ -429,7 +435,7 @@ namespace AndroCalculator
         {
 
             mainstring += ")";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void cos_Click(object sender, EventArgs e)
@@ -443,7 +449,7 @@ namespace AndroCalculator
                 mainstring += "acos(";
             }
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
@@ -458,39 +464,39 @@ namespace AndroCalculator
                 mainstring += "atan(";
             }
 
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
         private void factorial_Click(object sender, EventArgs e)
         {
             mainstring += "!";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
 
         }
 
         private void dot_Click(object sender, EventArgs e)
         {
             mainstring += ".";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void exp_Click(object sender, EventArgs e)
         {
             mainstring += "e";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void pie_Click(object sender, EventArgs e)
         {
             mainstring += "pi";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void root_Click(object sender, EventArgs e)
         {
             mainstring += "^";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void squareroot_Click(object sender, EventArgs e)
@@ -504,7 +510,7 @@ namespace AndroCalculator
             {
                 mainstring += "^2";
             }
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void log_Click(object sender, EventArgs e)
@@ -518,7 +524,7 @@ namespace AndroCalculator
             {
                 mainstring += "10^";
             }
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void ln_Click(object sender, EventArgs e)
@@ -532,19 +538,19 @@ namespace AndroCalculator
             {
                 mainstring += "e^";
             }
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void percentage_Click(object sender, EventArgs e)
         {
             mainstring += "%";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
 
         private void openpar_Click(object sender, EventArgs e)
         {
             mainstring += "(";
-            secondaryview.Text = mainstring;
+            mainview.Text = mainstring;
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -669,8 +675,8 @@ namespace AndroCalculator
             {
                 secondaryview.Focus();
             }
-            else if (e.KeyCode == Keys.Return)
-            {
+            else if (e.KeyCode == Keys.Enter)
+           {
                 //SendKeys.Send('{ENTER}');
                 equal.PerformClick();
             }
@@ -679,11 +685,15 @@ namespace AndroCalculator
 
 
         }
+
+
+
+
         //this code is to fix the bug with the enter key not working in previous version
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            secondaryview.Focus();
+           // secondaryview.Focus();
         }
 
         
@@ -698,7 +708,39 @@ namespace AndroCalculator
 
         private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            secondaryview.Focus();
+          //  if (e.KeyCode==Keys.Enter)
+          //  {
+         //   equal.Focus();
+
+           // }
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            //equal.Focus();
+           // secondaryview.Focus();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+                string value;
+            if (deg2.Text == "DEG")
+            {
+                mXparser.setDegreesMode();
+                Expression eh = new Expression(mainstring);
+                value = eh.calculate().ToString();
+                secondaryview.Text = Convert.ToString(value);
+            }
+            else
+            {
+                mXparser.setRadiansMode();
+                Expression eh = new Expression(mainstring);
+                value = eh.calculate().ToString();
+                secondaryview.Text = Convert.ToString(value);
+            }
+
+
+
         }
     }
 }
