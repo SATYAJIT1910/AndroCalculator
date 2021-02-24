@@ -723,6 +723,9 @@ namespace AndroCalculator
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (mainview.Text !="")
+            {
+
                 string value;
             if (deg2.Text == "DEG")
             {
@@ -738,6 +741,12 @@ namespace AndroCalculator
                 value = eh.calculate().ToString();
                 secondaryview.Text = Convert.ToString(value);
             }
+            }
+            else
+            {
+                secondaryview.Text = "";
+            }
+
 
 
 
