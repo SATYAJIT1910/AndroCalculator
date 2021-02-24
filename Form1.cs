@@ -379,7 +379,7 @@ namespace AndroCalculator
                 secondaryview.Text = secondaryview.Text.Substring(0, textlength - 1);
 
             }
-            secondaryview.Focus();
+            //secondaryview.Focus();
             secondaryview.SelectionStart = mainview.Text.Length;
             secondaryview.SelectionLength = 0;
 
@@ -662,6 +662,11 @@ namespace AndroCalculator
 
 
         }
-       
+        //this code is to fix the bug with the enter key not working in previous version
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            secondaryview.Focus();
+        }
     }
 }
