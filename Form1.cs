@@ -13,6 +13,8 @@ namespace AndroCalculator
     public partial class Form1 : Form
     {
         public static int darkmode = 0;
+        public static string hist = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -358,12 +360,17 @@ namespace AndroCalculator
                 string value = eh.calculate().ToString();
                 mainview.Text = Convert.ToString(value);
             }
+            //storing the history
+      
+            hist += mainview.Text + " = " + secondaryview.Text + '\n';
+
 
 
 
 
 
         }
+
 
 
         private void backspace_Click(object sender, EventArgs e)

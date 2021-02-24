@@ -12,6 +12,7 @@ namespace AndroCalculator
 {
     public partial class Form2 : Form
     {
+        
         public Form2()
         {
             InitializeComponent();
@@ -36,13 +37,67 @@ namespace AndroCalculator
         //this codes is for sync the darkmode status from the form1
 
         int form1darkmode = Form1.darkmode;
+        string historystr = Form1.hist;
+        string temp="";
         private void Form2_Shown(object sender, EventArgs e)
         {
+            
             if (form1darkmode == 1)
             {
                 this.BackColor = Color.Black;
+                listBox1.BackColor = Color.Black;
+                listBox1.ForeColor = SystemColors.Control;
             }
 
+            for(int i = 0; i < historystr.Length; i++)
+            {
+                if (historystr[i] != '\n')
+                {
+                    temp += historystr[i];
+                }
+                else
+                {
+                     listBox1.Items.Add(temp);
+                    
+                    temp = "";
+
+                }
+            }
+
+
+
+
+
+
+          
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Clear();
+            historystr = "";
+        }
+
+        private void options_fr2_Click(object sender, EventArgs e)
+        {
+            //code for contextmenu access by left click
+            Button btnSender = (Button)sender;
+            Point ptLowerLeft = new Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            contextMenuStrip1.Show(ptLowerLeft);
+            ////
         }
     }
 }
