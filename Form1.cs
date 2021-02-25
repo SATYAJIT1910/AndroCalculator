@@ -40,6 +40,7 @@ namespace AndroCalculator
                 deg1.Text = "DEG";
                 deg2.Text = "RAD";
             }
+            equal.Focus();
         }
 
         private void deg2_Click(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace AndroCalculator
                 deg2.Text = "DEG";
                 deg1.Text = "RAD";
             }
+            equal.Focus();
 
         }
         int countstate = 1;//ui state counter //1 means normal condition , 0 for inverted
@@ -87,7 +89,7 @@ namespace AndroCalculator
 
 
 
-
+            equal.Focus();
         }
 
 
@@ -165,17 +167,19 @@ namespace AndroCalculator
                 darkmode = 0;
 
             }
-
+            equal.Focus();
         }
 
         private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please send us your Feedback at satyajit.edu@outlook.com", "Send Feedback");
+            equal.Focus();
         }
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Go to the https://github.com/SATYAJIT1910/AndroCalculator", "Help");
+            equal.Focus();
         }
 
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,7 +204,7 @@ namespace AndroCalculator
 
             darkmode = 0;
             Writecon(darkmode);
-
+            equal.Focus();
         }
 
         private void darkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -226,7 +230,7 @@ namespace AndroCalculator
 
             darkmode = 1;
             Writecon(darkmode);
-
+            equal.Focus();
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -246,60 +250,70 @@ namespace AndroCalculator
         {
             mainstring = mainstring + '1';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit2_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '2';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit3_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '3';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit4_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '4';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit5_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '5';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit6_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '6';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit7_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '7';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit8_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '8';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit9_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '9';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void digit0_Click(object sender, EventArgs e)
         {
             mainstring = mainstring + '0';
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -309,6 +323,7 @@ namespace AndroCalculator
             mainstring = mainstring + '+';
 
             mainview.Text = mainstring;
+            equal.Focus();
 
         }
 
@@ -320,7 +335,7 @@ namespace AndroCalculator
             mainstring = mainstring + '-';
 
             mainview.Text = mainstring;
-
+            equal.Focus();
         }
 
         private void multiply_Click(object sender, EventArgs e)
@@ -330,7 +345,7 @@ namespace AndroCalculator
             mainstring = mainstring + '*';
 
             mainview.Text = mainstring;
-
+            equal.Focus();
         }
 
         private void divide_Click(object sender, EventArgs e)
@@ -339,6 +354,7 @@ namespace AndroCalculator
             mainstring = mainstring + '/';
 
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -383,7 +399,7 @@ namespace AndroCalculator
             secondaryview.Text = "";
             backspace.Text = "C";
 
-
+            equal.Focus();
 
 
 
@@ -418,6 +434,7 @@ namespace AndroCalculator
                 backspace.Text = "⌫";
 
             }
+            equal.Focus();
         }
 
 
@@ -432,6 +449,8 @@ namespace AndroCalculator
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
             contextMenuStrip1.Show(ptLowerLeft);
             ////
+            ///
+            equal.Focus();
         }
 
         private void sin_Click(object sender, EventArgs e)
@@ -447,6 +466,7 @@ namespace AndroCalculator
             }
 
             mainview.Text = mainstring;
+            equal.Focus();
 
         }
 
@@ -456,6 +476,7 @@ namespace AndroCalculator
 
             mainstring += ")";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void cos_Click(object sender, EventArgs e)
@@ -470,6 +491,7 @@ namespace AndroCalculator
             }
 
             mainview.Text = mainstring;
+            equal.Focus();
 
         }
 
@@ -485,6 +507,7 @@ namespace AndroCalculator
             }
 
             mainview.Text = mainstring;
+            equal.Focus();
 
         }
 
@@ -492,6 +515,7 @@ namespace AndroCalculator
         {
             mainstring += "!";
             mainview.Text = mainstring;
+            equal.Focus();
 
         }
 
@@ -499,24 +523,28 @@ namespace AndroCalculator
         {
             mainstring += ".";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void exp_Click(object sender, EventArgs e)
         {
             mainstring += "e";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void pie_Click(object sender, EventArgs e)
         {
             mainstring += "pi";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void root_Click(object sender, EventArgs e)
         {
             mainstring += "^";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void squareroot_Click(object sender, EventArgs e)
@@ -531,6 +559,7 @@ namespace AndroCalculator
                 mainstring += "^2";
             }
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void log_Click(object sender, EventArgs e)
@@ -545,6 +574,7 @@ namespace AndroCalculator
                 mainstring += "10^";
             }
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void ln_Click(object sender, EventArgs e)
@@ -559,18 +589,21 @@ namespace AndroCalculator
                 mainstring += "e^";
             }
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void percentage_Click(object sender, EventArgs e)
         {
             mainstring += "%";
             mainview.Text = mainstring;
+            equal.Focus();
         }
 
         private void openpar_Click(object sender, EventArgs e)
         {
             mainstring += "(";
             mainview.Text = mainstring;
+            equal.Focus();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -722,6 +755,7 @@ namespace AndroCalculator
         {
             var myForm = new Form2();
             myForm.Show();
+            equal.Focus();
         }
 
         private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -764,7 +798,7 @@ namespace AndroCalculator
             {
                 secondaryview.Text = "";
             }
-
+            equal.Focus();
 
 
 
@@ -813,8 +847,8 @@ namespace AndroCalculator
 
             File.AppendAllText(file, text1);
         }
-        ///
-
+        
+     //   private void 
 
 
         private void Form1_Load(object sender, EventArgs e)
