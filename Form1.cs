@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using org.mariuszgromada.math.mxparser;
+using System.IO;
 namespace AndroCalculator
 {
     public partial class Form1 : Form
@@ -198,6 +199,7 @@ namespace AndroCalculator
 
 
             darkmode = 0;
+            Writecon(darkmode);
 
         }
 
@@ -223,6 +225,7 @@ namespace AndroCalculator
 
 
             darkmode = 1;
+            Writecon(darkmode);
 
         }
 
@@ -749,5 +752,61 @@ namespace AndroCalculator
 
 
         }
+
+        //app configuration storing
+        public int Readcon()
+        {
+            int result=0;
+        string file = @"/config/theme.txt";
+            //if (File.Exists(file))
+          //  {
+               
+                string str = File.ReadAllText(file);
+                result = System.Convert.ToInt32(str);
+           // }
+
+
+            return result;
+
+        }
+
+        public void Writecon(int val)
+        {
+            string file = @"/config/theme.txt";
+            string text1;
+            if (val == 0)
+            {
+
+            text1 = "0";
+            }
+            else
+            {
+            text1 = "1";
+            }
+
+            File.WriteAllText(file, text1);
+        }
+
+
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            int mode = Readcon();
+            if (mode == 1)
+            {
+                darkToolStripMenuItem.PerformClick();
+           }
+            else
+            {
+                lightToolStripMenuItem.PerformClick();
+                
+            }
+
+        }
     }
+
+
+
+
 }
