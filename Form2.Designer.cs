@@ -116,7 +116,9 @@ namespace AndroCalculator
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.options_fr2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
