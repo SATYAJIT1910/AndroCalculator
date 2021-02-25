@@ -345,9 +345,7 @@ namespace AndroCalculator
         {
 
 
-            //testing capability
-            // mainstring = "sin(45)+2";
-            //string value = new DataTable().Compute(mainstring, null).ToString();//evalutes the result from string
+          
             string value;
             if (deg2.Text == "DEG")
             {
@@ -370,7 +368,11 @@ namespace AndroCalculator
 
             //storing the history
       
-            hist += value + " = " + mainstring + '\n';
+            hist = value + " = " + mainstring + '\n';
+            Writehist();
+            hist = "";
+
+            //
             secondaryview.Text = "";
 
 
@@ -753,17 +755,17 @@ namespace AndroCalculator
 
         }
 
-        //app configuration storing
+        //app configuration storing theme data
         public int Readcon()
         {
             int result=0;
         string file = @"/config/theme.txt";
-            //if (File.Exists(file))
-          //  {
+            if (File.Exists(file))
+            {
                
                 string str = File.ReadAllText(file);
                 result = System.Convert.ToInt32(str);
-           // }
+            }
 
 
             return result;
@@ -786,7 +788,17 @@ namespace AndroCalculator
 
             File.WriteAllText(file, text1);
         }
+        // app configuration for storing the history data .
 
+
+        public void Writehist()
+        {
+            string file = @"/config/history.txt";
+            string text1=hist;
+
+            File.AppendAllText(file, text1);
+        }
+        ///
 
 
 
@@ -802,6 +814,8 @@ namespace AndroCalculator
                 lightToolStripMenuItem.PerformClick();
                 
             }
+
+            //Readhist(); //it reads the older history .
 
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace AndroCalculator
 {
@@ -37,7 +38,32 @@ namespace AndroCalculator
         //this codes is for sync the darkmode status from the form1
 
         int form1darkmode = Form1.darkmode;
-        string historystr = Form1.hist;
+        string historystr = "";
+
+        public void Readhist()
+        {
+
+            string file = @"/config/history.txt";
+            if (File.Exists(file))
+            {
+
+                string str = File.ReadAllText(file);
+                historystr = str;
+            }
+
+
+
+
+        }
+        public void clearhist()
+        {
+            string file = @"/config/history.txt";
+            string text1 = "";
+
+            File.WriteAllText(file, text1);
+        }
+
+
         string temp="";
         private void Form2_Shown(object sender, EventArgs e)
         {
@@ -89,6 +115,8 @@ namespace AndroCalculator
             listBox1.Items.Clear();
             historystr = "";
             Form1.hist = "";
+            clearhist();
+            
         }
 
         private void options_fr2_Click(object sender, EventArgs e)
@@ -99,6 +127,11 @@ namespace AndroCalculator
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
             contextMenuStrip1.Show(ptLowerLeft);
             ////
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            Readhist();
         }
     }
 }
