@@ -133,5 +133,10 @@ namespace AndroCalculator
         {
             Readhist();
         }
+
+        private void Form2_Activated(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

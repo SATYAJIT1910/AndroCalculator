@@ -367,10 +367,17 @@ namespace AndroCalculator
 
 
             //storing the history
-      
-            hist = value + " = " + mainstring + '\n';
+
+            // hist = value + " = " + mainstring + '\n';
+            if (value != "NaN")
+            {
+            hist = mainstring + "=" + value + '\n';
             Writehist();
             hist = "";
+
+            }
+
+
 
             //
             secondaryview.Text = "";

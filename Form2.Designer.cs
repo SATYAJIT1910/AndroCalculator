@@ -89,7 +89,6 @@ namespace AndroCalculator
             this.listBox1.Location = new System.Drawing.Point(-1, 54);
             this.listBox1.Margin = new System.Windows.Forms.Padding(0);
             this.listBox1.Name = "listBox1";
-            this.listBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.listBox1.Size = new System.Drawing.Size(290, 467);
             this.listBox1.TabIndex = 6;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
@@ -123,6 +122,7 @@ namespace AndroCalculator
             this.ShowInTaskbar = false;
             this.Text = "Form2";
             this.TopMost = true;
+            this.Activated += new System.EventHandler(this.Form2_Activated);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.Shown += new System.EventHandler(this.Form2_Shown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
