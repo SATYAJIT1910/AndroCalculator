@@ -381,6 +381,7 @@ namespace AndroCalculator
 
             //
             secondaryview.Text = "";
+            backspace.Text = "C";
 
 
 
@@ -394,10 +395,8 @@ namespace AndroCalculator
         private void backspace_Click(object sender, EventArgs e)
         {
 
-           // if (secondaryview.Text == "NaN")
-          //  {
-           //     mainview.Text = "";
-          //  }
+            if (backspace.Text != "C")
+            {
             //code for backspace
             int textlength = mainview.Text.Length;
             if (textlength > 0)
@@ -410,6 +409,15 @@ namespace AndroCalculator
             secondaryview.SelectionLength = 0;
 
             mainstring = mainview.Text;
+            }
+            else
+            {
+                mainstring = "";
+                mainview.Text = "";
+                secondaryview.Text = "";
+                backspace.Text = "⌫";
+
+            }
         }
 
 
