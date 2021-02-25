@@ -122,7 +122,7 @@ namespace AndroCalculator
             this.Name = "Form2";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Form2";
+            this.Text = "History";
             this.TopMost = true;
             this.Activated += new System.EventHandler(this.Form2_Activated);
             this.Load += new System.EventHandler(this.Form2_Load);
