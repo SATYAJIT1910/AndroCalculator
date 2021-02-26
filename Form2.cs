@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace AndroCalculator
 {
     public partial class Form2 : Form
     {
-        
+
         public Form2()
         {
             InitializeComponent();
         }
-        //below code is from enable mouse drag on scrren for a borderless c# form 
+        //ENABLES THE MOUSE DRAG FOR BORDERLESS FORMS .
         Point lastPoint;
 
         private void Form2_MouseMove(object sender, MouseEventArgs e)
@@ -35,7 +29,7 @@ namespace AndroCalculator
             lastPoint = new Point(e.X, e.Y);
         }
 
-        //this codes is for sync the darkmode status from the form1
+        //THIS CODES FETCHES THE DARKMODE STATUS FROM THE FORM1
 
         int form1darkmode = Form1.darkmode;
         string historystr = "";
@@ -55,6 +49,8 @@ namespace AndroCalculator
 
 
         }
+
+        //THIS CODE CLEARS THE HISTORY
         public void clearhist()
         {
             string file = @"/config/history.txt";
@@ -64,18 +60,21 @@ namespace AndroCalculator
         }
 
 
-        string temp="";
+        string temp = "";
+
+
+        //THIS CODES LOADS FROM THE HISTORY FROM THE FILE AND SHOW IT 
         private void Form2_Shown(object sender, EventArgs e)
         {
-            
+
             if (form1darkmode == 1)
             {
                 this.BackColor = Color.Black;
                 listBox1.BackColor = Color.Black;
                 listBox1.ForeColor = SystemColors.Control;
             }
-
-            for(int i = 0; i < historystr.Length; i++)
+            //BREAKS THE STRING INTO THE SUBSTRING AND ADD IT TO THE LISTBOX
+            for (int i = 0; i < historystr.Length; i++)
             {
                 if (historystr[i] != '\n')
                 {
@@ -83,8 +82,8 @@ namespace AndroCalculator
                 }
                 else
                 {
-                     listBox1.Items.Add(temp);
-                    
+                    listBox1.Items.Add(temp);
+
                     temp = "";
 
                 }
@@ -95,7 +94,7 @@ namespace AndroCalculator
 
 
 
-          
+
 
         }
 
@@ -104,11 +103,6 @@ namespace AndroCalculator
             this.Hide();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-           
-        }
 
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -116,12 +110,12 @@ namespace AndroCalculator
             historystr = "";
             Form1.hist = "";
             clearhist();
-            
+
         }
 
         private void options_fr2_Click(object sender, EventArgs e)
         {
-            //code for contextmenu access by left click
+            //ACCESS THE CONTEXT MENU BY LEFT CLICK
             Button btnSender = (Button)sender;
             Point ptLowerLeft = new Point(0, btnSender.Height);
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
@@ -131,12 +125,7 @@ namespace AndroCalculator
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Readhist();
-        }
-
-        private void Form2_Activated(object sender, EventArgs e)
-        {
-            
+            Readhist(); //READS THE HISTORY ON THE FORM LOAD .
         }
     }
 }

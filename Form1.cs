@@ -1,35 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using org.mariuszgromada.math.mxparser; //IMPORTS MXPARSER PACKAGE
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO; //REQUIRED FOR FILE IMPORT , EXPORT
 using System.Windows.Forms;
-using org.mariuszgromada.math.mxparser;
-using System.IO;
 namespace AndroCalculator
 {
     public partial class Form1 : Form
     {
-        public static int darkmode = 0;
-        public static string hist = "";
+        public static int darkmode = 0; // 0-> LIGHT MODE , 1-> DARK MODE | IT IS A PUBLIC STATIC INT SO THAT IT CAN BE ACCESSED FROM THE FORM2(HISTORY)
+        public static string hist = ""; //STORES THE HISTORY INTO STRING .
 
         public Form1()
         {
             InitializeComponent();
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
 
         private void deg1_Click(object sender, EventArgs e)
         {
-            //change in the UI
+            //IT CHANGES THE TEXT ON THE DEGREE AND RADIAN SWITCHING BUTTON
             if (deg1.Text == "DEG")
             {
                 deg1.Text = "RAD";
@@ -45,7 +34,7 @@ namespace AndroCalculator
 
         private void deg2_Click(object sender, EventArgs e)
         {
-            //change in the UI
+            //IT CHANGES THE TEXT ON THE DEGREE AND RADIAN SWITCHING BUTTON
             if (deg2.Text == "DEG")
             {
                 deg2.Text = "RAD";
@@ -59,12 +48,12 @@ namespace AndroCalculator
             equal.Focus();
 
         }
-        int countstate = 1;//ui state counter //1 means normal condition , 0 for inverted
+        int countstate = 1;//1-> NORMAL , 0-> INVERTED OPERATIONS MODE 
         private void inv_Click(object sender, EventArgs e)
         {
             if (countstate == 1)
             {
-
+                //CHANGES THE BUTTON TEXT IF INVERT OPERATION SELECTED .
                 sin.Text = "sin⁻¹";
                 cos.Text = "cos⁻¹";
                 tan.Text = "tan⁻¹";
@@ -102,7 +91,8 @@ namespace AndroCalculator
 
 
 
-        //below code is from enable mouse drag on scrren for a borderless c# form 
+        //BELLOW CODES HELPS TO ENABLE THE MOUSE DRAG ON THE FORM , IF THE FORM IS IN BORDERLESS CONDITION .
+        //THIS CODES ARE MOSTLY NOT REQUIRED IF THE FORM HAS BORDER ENABLED .
         Point lastPoint;
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -119,56 +109,8 @@ namespace AndroCalculator
             lastPoint = new Point(e.X, e.Y);
         }
 
+        //BELOW CODES ARE FOR SHOWING MESSAGEBOXES ON CLICK EVENT IN CONTEXT MENU
 
-        //Codes for implemation of Dark Mode
-
-        
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            if (darkmode == 0)
-            {
-                this.BackColor = Color.Black;
-                digit0.ForeColor = SystemColors.Control;
-                digit1.ForeColor = SystemColors.Control;
-                digit2.ForeColor = SystemColors.Control;
-                digit3.ForeColor = SystemColors.Control;
-                digit4.ForeColor = SystemColors.Control;
-                digit5.ForeColor = SystemColors.Control;
-                digit6.ForeColor = SystemColors.Control;
-                digit7.ForeColor = SystemColors.Control;
-                digit8.ForeColor = SystemColors.Control;
-                digit9.ForeColor = SystemColors.Control;
-                dot.ForeColor = SystemColors.Control;
-                mainview.ForeColor = SystemColors.Control;
-                mainview.BackColor = Color.Black;
-                secondaryview.BackColor = Color.Black;
-
-
-
-                darkmode = 1;
-            }
-            else
-            {
-                this.BackColor = SystemColors.Control;
-                digit0.ForeColor = Color.Black;
-                digit1.ForeColor = Color.Black;
-                digit2.ForeColor = Color.Black;
-                digit3.ForeColor = Color.Black;
-                digit4.ForeColor = Color.Black;
-                digit5.ForeColor = Color.Black;
-                digit6.ForeColor = Color.Black;
-                digit7.ForeColor = Color.Black;
-                digit8.ForeColor = Color.Black;
-                digit9.ForeColor = Color.Black;
-                mainview.ForeColor = Color.Black;
-                mainview.BackColor = SystemColors.Control;
-                secondaryview.BackColor = SystemColors.Control;
-
-                darkmode = 0;
-
-            }
-            equal.Focus();
-        }
 
         private void sendFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -181,6 +123,7 @@ namespace AndroCalculator
             MessageBox.Show("Go to the https://github.com/SATYAJIT1910/AndroCalculator", "Help");
             equal.Focus();
         }
+        //BELOW CODES ARE FOR CHANGING THE COLORS OF THE FORM ELEMENTS BASED ON THE THEME SELECTED .
 
         private void lightToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -203,7 +146,7 @@ namespace AndroCalculator
 
 
             darkmode = 0;
-            Writecon(darkmode);
+            Writecon(darkmode); //THIS CODE WRITES THE VALUE OF DARKMODE ON/OFF TO A FILE IN C:\CONFIG OF USER , SO THAT THE NEXT TIME THE PROGRAM OPENS IT CAN KNOW LAST TIME SELECTED THEME .
             equal.Focus();
         }
 
@@ -229,22 +172,24 @@ namespace AndroCalculator
 
 
             darkmode = 1;
-            Writecon(darkmode);
+            Writecon(darkmode); //WRITES THE VALUE OF THEMEMODE TO C:\CONFIG
             equal.Focus();
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-            //MessageBox.Show("Right click");
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //IT CLOSED THE APPLICATION ON EXIT CLICK
         }
 
-        //writing the backend codes
-        string mainstring = "";
+        //BELOW CODES ARE FOR MAINLY BACKEND PROCESSING .
+        /* ON EACH BUTTON CLICK THE BUTTON SPECIFIC VALUE ADDED TO A STRING NAMED "mainstring"
+         * AFTER THAT WHEN THE USER CLICK ON THE EQUAL SIGN , IT CALCULATES THE MATHMATICAL VALUE OF THE STRING USING THE MXPARSER PACKAGE .
+         * 
+         * 
+         * EQUAL.FOCUS() ADDED TO THE EVERY BUTTON CLICK TO SOLVE THE ISSUE OF ENTER BUTTON , GETTING DEFOCUS AND NOT PERFORMING THE EQUAL OPERATION .
+         * 
+         */
+        string mainstring = ""; //THIS STRING STORES THE USER INPUT
 
         private void digit1_Click(object sender, EventArgs e)
         {
@@ -361,44 +306,45 @@ namespace AndroCalculator
         {
 
 
-          
+
             string value;
             if (deg2.Text == "DEG")
             {
 
-                mXparser.setDegreesMode();
-                Expression eh = new Expression(mainstring);
-                value = eh.calculate().ToString();
+                mXparser.setDegreesMode(); //IT SETS THE MXPARSER TO DO DEGREE OPERATIONS
+                Expression eh = new Expression(mainstring); //MXPARSER CODE
+                value = eh.calculate().ToString(); //MXPARSER CODE
                 mainview.Text = Convert.ToString(value);
             }
             else
             {
-                mXparser.setRadiansMode();
-                Expression eh = new Expression(mainstring);
-                value = eh.calculate().ToString();
+                mXparser.setRadiansMode(); //IT SETS THE MXPARSER TO DO RADIAN OPERATIONS
+                Expression eh = new Expression(mainstring); //MXPARSER CODE
+                value = eh.calculate().ToString(); //MXPARSER CODE
                 mainview.Text = Convert.ToString(value);
             }
 
 
 
 
-            //storing the history
+            //BELOW CODES USED FOR STORING THE HISTORY
 
-            // hist = value + " = " + mainstring + '\n';
-            if (value != "NaN")
+            if (value != "NaN") //SKIPS THE RESULT WITH NaN value 
             {
-            hist = mainstring + "=" + value + '\n';
-            Writehist();
-            hist = "";
+                hist = mainstring + "=" + value + '\n'; //MAKES THE STRING FOR HISTORY .
+                Writehist(); //WRITES THE STRING TO THE C:\CONFIG\ FOLDER.
+                hist = ""; //CLEAR THE HISTORY STRING.
 
             }
 
 
 
             //
-            secondaryview.Text = "";
-            backspace.Text = "C";
+            secondaryview.Text = ""; //CLEARS THE SECONDARY CLICK
+            backspace.Text = "C"; //CHNAGES THE BACKSPACE TEXT TO PERFORM CLEAR ALL OPERATION
 
+
+            mainstring = value;
             equal.Focus();
 
 
@@ -413,18 +359,17 @@ namespace AndroCalculator
 
             if (backspace.Text != "C")
             {
-            //code for backspace
-            int textlength = mainview.Text.Length;
-            if (textlength > 0)
-            {
-                mainview.Text = mainview.Text.Substring(0, textlength - 1);
+                //CODE FOR BACKSPACE
+                int textlength = mainview.Text.Length;
+                if (textlength > 0)
+                {
+                    mainview.Text = mainview.Text.Substring(0, textlength - 1);
 
-            }
-            //secondaryview.Focus();
-            secondaryview.SelectionStart = mainview.Text.Length;
-            secondaryview.SelectionLength = 0;
+                }
+                secondaryview.SelectionStart = mainview.Text.Length;
+                secondaryview.SelectionLength = 0;
 
-            mainstring = mainview.Text;
+                mainstring = mainview.Text;
             }
             else
             {
@@ -443,7 +388,7 @@ namespace AndroCalculator
 
         private void options_Click(object sender, EventArgs e)
         {
-            //code for contextmenu access by left click
+            //THIS CODE HELPS TO ACCESS THE CONTEXT MENU USING LEFT CLICK .
             Button btnSender = (Button)sender;
             Point ptLowerLeft = new Point(0, btnSender.Height);
             ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
@@ -607,11 +552,13 @@ namespace AndroCalculator
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            // MessageBox.Show(e.KeyCode.ToString());
+            // MessageBox.Show(e.KeyCode.ToString()); -> THIS CODE USED TO CHECK/TEST THE KEYCODE OF SPECIFIC KEY
 
 
-            if(e.KeyCode==Keys.Add || e.Shift && e.KeyCode == Keys.Oemplus)
-            { 
+            //BELOW CODES ARE USED TO ENABLE THE KEYBROAD INPUT
+
+            if (e.KeyCode == Keys.Add || e.Shift && e.KeyCode == Keys.Oemplus)
+            {
                 plus.PerformClick();
             }
             else if (e.KeyCode == Keys.Subtract || e.Shift && e.KeyCode == Keys.OemMinus)
@@ -646,12 +593,12 @@ namespace AndroCalculator
             {
                 percentage.PerformClick();
             }
-            else if (e.Control && e.Shift && e.KeyCode == Keys.I)
+            else if (e.Control && e.Shift && e.KeyCode == Keys.I) //THIS CODE IS FOR CREATING SHORTCUT CTRL+SHIFT+I ->INVERSE OPERATION
             {
                 inv.PerformClick();
-                
+
             }
-            else if (e.Control && e.Shift && e.KeyCode == Keys.R)
+            else if (e.Control && e.Shift && e.KeyCode == Keys.R) //THIS CODE IS FOR CREATING SHORTCUT CTRL+SHIFT+R ->DEG/RAD OPERATION
             {
                 deg1.PerformClick();
 
@@ -660,7 +607,7 @@ namespace AndroCalculator
             {
                 percentage.PerformClick();
             }
-            else if(e.KeyCode==Keys.Divide ||e.KeyCode==Keys.OemQuestion)
+            else if (e.KeyCode == Keys.Divide || e.KeyCode == Keys.OemQuestion)
             {
                 divide.PerformClick();
             }
@@ -708,31 +655,17 @@ namespace AndroCalculator
             {
                 backspace.PerformClick();
             }
-            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
-            {
-                digit9.PerformClick();
-            }
-            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
-            {
-                digit9.PerformClick();
-            }
-            else if (e.KeyCode == Keys.NumPad9 || e.KeyCode == Keys.D9)
-            {
-                digit9.PerformClick();
-            }
-            else if (e.KeyCode == Keys.OemPeriod||e.KeyCode==Keys.Decimal)
+            else if (e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Decimal)
             {
                 dot.PerformClick();
             }
-            else if (e.KeyCode==Keys.Space)
-           {
-                //MessageBox.Show(e.KeyCode.ToString());
-                //SendKeys.Send('{ENTER}');
+            else if (e.KeyCode == Keys.Space)
+            {
                 equal.PerformClick();
             }
 
 
-           
+
 
 
         }
@@ -740,17 +673,8 @@ namespace AndroCalculator
 
 
 
-        //this code is to fix the bug with the enter key not working in previous version
 
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-           // secondaryview.Focus();
-        }
-
-        
-        //history section
-
-        //this code is to openup the history form
+        //BELOW CODES OPEN UP THE HISTORY FORM .
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var myForm = new Form2();
@@ -758,41 +682,28 @@ namespace AndroCalculator
             equal.Focus();
         }
 
-        private void Form1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-          //  if (e.KeyCode==Keys.Enter)
-          //  {
-         //   equal.Focus();
-
-           // }
-        }
-
-        private void Form1_MouseClick(object sender, MouseEventArgs e)
-        {
-            //equal.Focus();
-           // secondaryview.Focus();
-        }
+        //THIS CODE IS USED FOR CONTINUOUS EVALUTION OF THE RESULT .
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (mainview.Text !="")
+            if (mainview.Text != "")
             {
 
                 string value;
-            if (deg2.Text == "DEG")
-            {
-                mXparser.setDegreesMode();
-                Expression eh = new Expression(mainstring);
-                value = eh.calculate().ToString();
-                secondaryview.Text = Convert.ToString(value);
-            }
-            else
-            {
-                mXparser.setRadiansMode();
-                Expression eh = new Expression(mainstring);
-                value = eh.calculate().ToString();
-                secondaryview.Text = Convert.ToString(value);
-            }
+                if (deg2.Text == "DEG")
+                {
+                    mXparser.setDegreesMode();
+                    Expression eh = new Expression(mainstring);
+                    value = eh.calculate().ToString();
+                    secondaryview.Text = Convert.ToString(value);
+                }
+                else
+                {
+                    mXparser.setRadiansMode();
+                    Expression eh = new Expression(mainstring);
+                    value = eh.calculate().ToString();
+                    secondaryview.Text = Convert.ToString(value);
+                }
             }
             else
             {
@@ -804,14 +715,14 @@ namespace AndroCalculator
 
         }
 
-        //app configuration storing theme data
+        //THIS FUNCTION READS THE THEME VALUE .
         public int Readcon()
         {
-            int result=0;
-        string file = @"/config/theme.txt";
+            int result = 0;
+            string file = @"/config/theme.txt";
             if (File.Exists(file))
             {
-               
+
                 string str = File.ReadAllText(file);
                 result = System.Convert.ToInt32(str);
             }
@@ -820,7 +731,7 @@ namespace AndroCalculator
             return result;
 
         }
-
+        //THIS CODE WRITES THE THEME VALUE
         public void Writecon(int val)
         {
             string file = @"/config/theme.txt";
@@ -828,43 +739,41 @@ namespace AndroCalculator
             if (val == 0)
             {
 
-            text1 = "0";
+                text1 = "0";
             }
             else
             {
-            text1 = "1";
+                text1 = "1";
             }
 
             File.WriteAllText(file, text1);
         }
-        // app configuration for storing the history data .
+        // THIS CODE WRITES THE HISTORY DATA
 
 
         public void Writehist()
         {
             string file = @"/config/history.txt";
-            string text1=hist;
+            string text1 = hist;
 
             File.AppendAllText(file, text1);
         }
-        
-     //   private void 
 
 
+        //THIS CODES USED TO FETCH THE THEME STATUS ON FORM LOAD .
         private void Form1_Load(object sender, EventArgs e)
         {
             int mode = Readcon();
             if (mode == 1)
             {
                 darkToolStripMenuItem.PerformClick();
-           }
+            }
             else
             {
                 lightToolStripMenuItem.PerformClick();
-                
+
             }
 
-            //Readhist(); //it reads the older history .
 
         }
     }

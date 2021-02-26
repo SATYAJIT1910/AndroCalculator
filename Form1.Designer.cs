@@ -792,14 +792,7 @@ namespace AndroCalculator
             this.secondaryview.TabIndex = 5;
             this.secondaryview.TabStop = false;
             this.secondaryview.Text = " ";
-            this.secondaryview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
-            // 
-            // Form1
-            // 
+            this.secondaryview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right; 
             this.AcceptButton = this.equal;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -821,7 +814,6 @@ namespace AndroCalculator
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AndroCalculator";
-            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
