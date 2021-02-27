@@ -18,5 +18,9 @@ This project aims to clone &amp; port Google's Android Calculator to Windows pla
  # Team Members :
   1. @dev-tushar11 --> App testing and Feature Sugesstion.
   2. @aghosh0605 --> App testing and Feature Sugesstion.
+
+# Download Link :
+
+https://github.com/SATYAJIT1910/AndroCalculator/releases/download/v1.0.1/AndroCalculator-v1.0.1.exe
  
 
