@@ -23,4 +23,4 @@ This project aims to clone &amp; port Google's Android Calculator to Windows pla
 
 https://github.com/SATYAJIT1910/AndroCalculator/releases/download/v1.0.1/AndroCalculator-v1.0.1.exe
  
-
+This version is in the Reputed list of applications by Microsoft (sha256 – “158cbd766cff4f668caab066c5abeb010258e59df32b2de27808dae81fc6704f”).
