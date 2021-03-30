@@ -5,10 +5,10 @@ using System.Windows.Forms;
 
 namespace AndroCalculator
 {
-    public partial class Form2 : Form
+    public partial class History : Form
     {
 
-        public Form2()
+        public History()
         {
             InitializeComponent();
         }
@@ -31,7 +31,7 @@ namespace AndroCalculator
 
         //THIS CODES FETCHES THE DARKMODE STATUS FROM THE FORM1
 
-        int form1darkmode = Form1.darkmode;
+        int form1darkmode = Calculator.darkmode;
         string historystr = "";
 
         public void Readhist()
@@ -108,7 +108,7 @@ namespace AndroCalculator
         {
             listBox1.Items.Clear();
             historystr = "";
-            Form1.hist = "";
+            Calculator.hist = "";
             clearhist();
 
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace AndroCalculator
 {
-    partial class Form1
+    partial class Calculator
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace AndroCalculator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.factorial = new System.Windows.Forms.Button();
             this.closepar = new System.Windows.Forms.Button();

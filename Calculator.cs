@@ -5,12 +5,12 @@ using System.IO; //REQUIRED FOR FILE IMPORT , EXPORT
 using System.Windows.Forms;
 namespace AndroCalculator
 {
-    public partial class Form1 : Form
+    public partial class Calculator : Form
     {
         public static int darkmode = 0; // 0-> LIGHT MODE , 1-> DARK MODE | IT IS A PUBLIC STATIC INT SO THAT IT CAN BE ACCESSED FROM THE FORM2(HISTORY)
         public static string hist = ""; //STORES THE HISTORY INTO STRING .
 
-        public Form1()
+        public Calculator()
         {
             InitializeComponent();
 
@@ -677,7 +677,7 @@ namespace AndroCalculator
         //BELOW CODES OPEN UP THE HISTORY FORM .
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var myForm = new Form2();
+            var myForm = new History();
             myForm.Show();
             equal.Focus();
         }

@@ -2,7 +2,7 @@
 namespace AndroCalculator
 {
 
-    partial class Form2
+    partial class History
     {
         /// <summary>
         /// Required designer variable.
