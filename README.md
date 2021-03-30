@@ -1,7 +1,7 @@
 # AndroCalculator
 This project aims to clone &amp; port Google's Android Calculator to Windows platform . This project is written fully in c# from scratch.
 
-![snapshot of Androcalculator](https://github.com/SATYAJIT1910/AndroCalculator/blob/master/androcalculator_pic.png?raw=true)
+![snapshot of Androcalculator](https://github.com/SATYAJIT1910/AndroCalculator/blob/master/Resources/androcalculator_pic%20.png?raw=true)
 # Features :
 
 ✅ Light and Dark mode .\
